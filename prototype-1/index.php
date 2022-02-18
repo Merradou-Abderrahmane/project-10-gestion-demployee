@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<?php
+    $getfile = file_get_contents('data.json');
+    $data = json_decode($getfile);
+?>
+
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototype 2</title>
-</head>
 <body>
     <div>
         <a href="insert.php">Insert Data</a>
@@ -16,9 +15,22 @@
                 <th>Age</th>
                 <th>Action</th>
             </tr>
+
             <?
-            foreach($data as $value)
+                    foreach($data as $value){
+                    
             ?>
+
+            <tr>
+                <td><?= $value[1]?></td>    <!-- ?php echo -->
+                <td><?= $value[2]?></td>
+                <td><?= $value[3]?></td>
+                <td>
+                    <a href="edit.php?id=<?php echo $value[0] ?>">Edit</a>
+                    <a href="delete.php?id=<?php echo $value[0] ?>">delete</a>
+                </td>
+            </tr>
+            <?php }?>
         </table>
     </div>
 </body>
