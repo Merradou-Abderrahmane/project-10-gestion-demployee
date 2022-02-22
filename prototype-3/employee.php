@@ -1,37 +1,48 @@
 <?php
-class Employee {
-    private $id;
-    private $firstName;
-    public $lastName;
-    private $gender;
-    private $birthDate;
+    class Employee {
+        private $id;
+        private $firstName;
+        private $lastName;
+        private $gender;
+        private $birthDate;
 
-    private function getId() {
-        return $this->$id;
-    }
-    private function setId($value){
-        $this->$id = $value;
-    }
+        public function getId(){
+            return $this->id;
+        }
+        public function setId($value){
+            $this->id = $value;
+        }
 
-    private function getFirstName() {
-        return $this->$id;
-    }
-    private function setFirstName($value){
-        $this->$id = $value;
-    }
+        public function getFirstName(){
+            return $this->firstName;
+        }
 
-    private function getGender() {
-        return $this->$id;
-    }
-    private function setGender($value){
-        $this->$id = $value;
-    }
+        public function setFirstName($value){
+            $this->firstName = $value;
+        }
 
-    private function getBirthDate() {
-        return $this->$id;
+        public function getLastName(){
+            return $this->lastName;
+        }
+
+        public function setLastName($value){
+            $this->lastName= $value;
+        }
+
+        public function getGender(){
+            return $this->gender;
+        }
+
+        public function setGender($value){
+            $this->gender= $value;
+        }
+
+        public function getBirthDate(){
+            return $this->birthDate;
+        }
+
+        public function setBirthDate($value){
+            $this->birthDate = $value;
+        }
     }
-    private function setBirthDate($value){
-        $this->$id = $value;
-    }
-}
 ?>
