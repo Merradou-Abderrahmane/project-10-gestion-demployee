@@ -15,6 +15,25 @@ class EmployeeManager {
         }
       return $this->connection;
     }
+    
+    public function getAllEmployees(){
+        $sqlGetData = 'SELECT id, firstName, lastName, birthDate, gender FROM employees_db1';
+        $result = mysqli_query($this->getConnection(), $sqlGetData);
+        $employeesList = mysqli_fetch_assoc($result);
+
+        $employees = array();
+
+        foreach($employeesList as $employeeList){
+            $employee = new Employee();
+            $employee->setId($employeeList['id']);
+            $employee->setId($employeeList['firstName']);
+            $employee->setId($employeeList['lastName']);
+            $employee->setId($employeeList['birthDate']);
+            $employee->setId($employeeList['gender']);
+            array_push($employees, $employee);  
+        }
+        return $employees;
+    }
 
 
 }
