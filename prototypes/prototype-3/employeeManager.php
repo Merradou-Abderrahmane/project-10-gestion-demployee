@@ -4,7 +4,7 @@ require_once 'employee.php';
 class EmployeeManager { 
     private $connection = null;
 
-    public function getConnection(){
+    private function getConnection(){
         if (is_null($this->connection)){
             $this->connection = mysqli_connect('localhost', 'test', 'test123', 'demo');
 
@@ -52,6 +52,22 @@ class EmployeeManager {
             $sqlDeleteQuery = "DELETE FROM employees_db1 WHERE id=$id";
             mysqli_query($this->getConnection(), $sqlDeleteQuery);
         }
+    
+        public function editEmployee($id, $firstName, $lastName, $birthDate, $gender){
+            // Update Query
+            $sqlUpdateQuery = "UPDATE employees_db1 SET
+                              firstName='$firstName', lastName='$lastName', birthDate='$birthDate', gender='$gender'
+                              WHERE id=$id";
+            // Make Query
+            mysqli_query($this->getConnection(), $sqlUpdateQuery);
+            
+            if (mysqli_error($this->getConnection())){
+                $exceptionMessage = 'Error' . mysqli_errno($this->getConnection());
+                throw new Exception($exceptionMessage);
+            }
+                            
+        }
+    
 }
 
 
