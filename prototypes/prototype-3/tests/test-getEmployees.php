@@ -12,10 +12,5 @@ foreach($employee_data as $employee){
     echo $employee->getBirthDate();
     echo $employee->getGender();
 }
-// test connection
-$connection = $employeeManager->getConnection();
-if ($connection){
-    echo 'Successful connection';
-}
 
 ?>
