@@ -26,10 +26,10 @@ class EmployeeManager {
         foreach($employeesList as $employeeList){
             $employee = new Employee();
             $employee->setId($employeeList['id']);
-            $employee->setId($employeeList['firstName']);
-            $employee->setId($employeeList['lastName']);
-            $employee->setId($employeeList['birthDate']);
-            $employee->setId($employeeList['gender']);
+            $employee->setFirstName($employeeList['firstName']);
+            $employee->setLastName($employeeList['lastName']);
+            $employee->setBirthDate($employeeList['birthDate']);
+            $employee->setGender($employeeList['gender']);
             array_push($employees, $employee);  
         }
         return $employees;
