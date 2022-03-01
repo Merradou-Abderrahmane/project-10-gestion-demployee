@@ -35,6 +35,20 @@ class EmployeeManager {
         return $employees;
     }
 
+    public function insertEmployee($employee){
+        $firstName = $employee->getFirstName();
+        $lastName = $employee->getLastName();
+        $birthDate = $employee->getBirthDate();
+        $gender = $employee->getGender();
+
+        // sql insert query
+        $sqlInsertQuery = "INSERT INTO employees_db1(firstName,lastName, birthDate, gender)
+                           VALUES('$firstName', '$lastName', '$birthDate', '$gender')";
+                           
+        mysqli_query($this->getConnection(), $sqlInsertQuery);
+    }
+
+
 
 }
 
