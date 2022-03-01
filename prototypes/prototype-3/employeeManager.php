@@ -67,8 +67,24 @@ class EmployeeManager {
             }
                             
         }
+
+        public function getEmployee($id){
+            $sqlGetQuery = "SELECT * FROM employees_db1 WHERE id=$id";
     
+            // get result
+            $result = mysqli_query($this->getConnection(), $sqlGetQuery);
+    
+            // fetch to Associative array
+            $employee_data = mysqli_fetch_assoc($result);
+    
+            $employee = new Employee();
+            $employee->setId($employee_data['id']);
+            $employee->setFirstName($employee_data['firstName']);
+            $employee->setLastName($employee_data['lastName']);
+            $employee->setBirthDate($employee_data['birthDate']);
+            $employee->setGender($employee_data['gender']);
+    
+            return $employee;
+        }
 }
-
-
 ?>
