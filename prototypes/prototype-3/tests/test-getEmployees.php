@@ -1,5 +1,6 @@
 <?php
-// test require the existing of an 'add employee ' function, or you might add directly from Database
+// test of getAllEmployees method requires the existing of an 'add employee ' function
+// or you might add employees directly from Database then access to them
 require_once '../employeeManager.php';
 
 $employeeManager = new EmployeeManager();

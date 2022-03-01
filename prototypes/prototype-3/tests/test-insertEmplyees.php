@@ -1,6 +1,7 @@
 <?php 
 require_once "../employeeManager.php";
 
+// test insertEmployee method by setting/assigning the values required with the info we want
 $employee = new Employee;
 $employee->setFirstName('Merradou');
 $employee->setLastName('Abderrahmane');
