@@ -75,7 +75,7 @@ class EmployeeManager {
             $result = mysqli_query($this->getConnection(), $sqlGetQuery);
     
             // fetch to Associative array
-            $employee_data = mysqli_fetch_assoc($result);
+            $employee_data = mysqli_fetch_all($result, MYSQLI_ASSOC);
     
             $employee = new Employee();
             $employee->setId($employee_data['id']);
