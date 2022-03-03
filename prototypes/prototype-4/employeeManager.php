@@ -25,11 +25,11 @@ class EmployeeManager {
         $employeeArray = array();
         foreach($employee_data as $data){
             $employee = new Employee();
-            $employee->setId($data['id']);
-            $employee->setFirstName($data['firstName']);
-            $employee->setLastName($data['lastName']);
-            $employee->setBirthDate($data['BirthDate']);
-            $employee->setGender($data['gender']);
+            $employee->setId($data->id);
+            $employee->setFirstName($data->firstName);
+            $employee->setLastName($data->lastName);
+            $employee->setBirthDate($data->birthDate);
+            $employee->setGender($data->gender);
 
             array_push($employeeArray, $employee);
         }

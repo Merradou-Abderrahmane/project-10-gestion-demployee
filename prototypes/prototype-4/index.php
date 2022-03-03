@@ -1,5 +1,5 @@
 <?php
-require_once 'employees.json';
+require_once 'employeeManager.php';
 $employeeManager = new EmployeeManager();
 $dataEmployee = $employeeManager->getAllEmployees();
 
@@ -27,7 +27,7 @@ $dataEmployee = $employeeManager->getAllEmployees();
             </tr>
 
             <?php
-                    foreach($data as $employee){
+                    foreach($dataEmployee as $employee){
             ?>
 
             <tr>
