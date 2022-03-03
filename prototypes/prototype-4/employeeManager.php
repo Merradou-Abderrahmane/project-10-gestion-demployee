@@ -88,8 +88,8 @@
             foreach($data as $employee_data){
                 if($employee_data->id== $id){
                     $employee->setId($employee_data->id);
-                    $employee->setFirstName($employee_data->first_name);
-                    $employee->setLastName($employee_data->last_name);
+                    $employee->setFirstName($employee_data->firstName);
+                    $employee->setLastName($employee_data->lastName);
                     $employee->setGender($employee_data->gender);
                     $employee->setBirthDate($employee_data->birthDate);
                     break;
