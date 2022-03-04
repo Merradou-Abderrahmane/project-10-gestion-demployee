@@ -104,7 +104,31 @@
             $sqlDeleteQuery = "DELETE FROM employee WHERE id= $id";
             mysqli_query($this->getConnection(), $sqlDeleteQuery);
         }
-
         
+        public function getEmployee($id){
+            $sqlGetQuery = "SELECT * FROM employee WHERE id= $id";
+        
+            // get result
+            $result = mysqli_query($this->getConnection(), $sqlGetQuery);
+        
+            // fetch to array
+            $employee_data = mysqli_fetch_assoc($result);
+
+            $employee = new Employee();
+
+            $employee->setId($employee_data['id']);
+            $employee->setRegistrationNumber($employee_data['registrationNumber']);
+            $employee->setFirstName($employee_data['firstName']);
+            $employee->setLastName($employee_data['lastName']);
+            $employee->setBirthDate($employee_data['birthDate']);
+            $employee->setDepartment($employee_data['department']);
+            $employee->setSalary($employee_data['salary']);
+            $employee->setOccupation($employee_data['occupation']);
+            $employee->setPhoto($employee_data['photo']);
+            return $employee;
+        }  
+
+
+
     }
 ?>
