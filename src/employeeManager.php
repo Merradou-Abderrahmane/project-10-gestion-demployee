@@ -98,5 +98,13 @@
 
         mysqli_query($this->getConnection(), $sqlInsertQuery);
         }
+
+        // sql delete query
+        public function deleteEmployee($id){
+            $sqlDeleteQuery = "DELETE FROM employee WHERE id= $id";
+            mysqli_query($this->getConnection(), $sqlDeleteQuery);
+        }
+
+        
     }
 ?>
