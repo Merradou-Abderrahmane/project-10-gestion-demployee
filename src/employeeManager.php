@@ -8,7 +8,7 @@
             if(is_null($this->Connection)){
                 $this->Connection = mysqli_connect('localhost', 'test', 'test123', 'realisation');
 
-                if($this->Connection){
+                if(!$this->Connection){
                     $message = 'Connection Error: ' .mysqli_connect_error();
                     throw new Exception($message);
                 }
@@ -78,7 +78,7 @@
             $photo = $employee->getPhoto();
 
             // sql insert query
-            $sqlInsertQuery = "INSERT INTO employees
+            $sqlInsertQuery = "INSERT INTO employee
                                 (registrationNumber, 
                                 firstName, 
                                 lastName, 
