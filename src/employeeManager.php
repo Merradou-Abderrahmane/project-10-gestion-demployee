@@ -2,9 +2,9 @@
     require_once 'employee.php';
 
     class EmployeeManager {
-        public $Connection = null;
+        private $Connection = null;
 
-        public function getConnection(){
+        private function getConnection(){
             if(is_null($this->Connection)){
                 $this->Connection = mysqli_connect('localhost', 'test', 'test123', 'realisation');
 
@@ -39,5 +39,29 @@
             return $employees;
         }
 
+        private function filterUserInput($employee){
+            
+            $filteredEmployee = new Employee();
+
+            $registrationNumber = mysqli_escape_string($this->getConnection(),$employee->getRegistrationNumber());
+            $firstName = mysqli_escape_string($this->getConnection(),$employee->getFirstName());
+            $lastName = mysqli_escape_string($this->getConnection(),$employee->getLastName());
+            $birthDate = mysqli_escape_string($this->getConnection(),$employee->getBirthDate());
+            $department = mysqli_escape_string($this->getConnection(),$employee->getDepartment());
+            $salary = mysqli_escape_string($this->getConnection(),$employee->getSalary());
+            $occupation = mysqli_escape_string($this->getConnection(),$employee->getOccupation());
+            $photo = mysqli_escape_string($this->getConnection(),$employee->getPhoto());
+
+            $filteredEmployee->setRegistrationNumber($registrationNumber);
+            $filteredEmployee->setFirstName($firstName);
+            $filteredEmployee->setLastName($lastName);
+            $filteredEmployee->setBirthDate($birthDate);
+            $filteredEmployee->setDepartment($department);
+            $filteredEmployee->setSalary($salary);
+            $filteredEmployee->setOccupation($occupation);
+            $filteredEmployee->setPhoto($photo);
+
+            return $filteredEmployee;
+        }
     }
 ?>
