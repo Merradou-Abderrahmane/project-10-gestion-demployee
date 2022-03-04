@@ -63,5 +63,40 @@
 
             return $filteredEmployee;
         }
+
+        public function insertEmployee($employeeInput){
+
+            $employee = $this->filterUserInput($employeeInput);
+
+            $registrationNumber = $employee->getRegistrationNumber();
+            $firstName = $employee->getFirstName();
+            $lastName = $employee->getLastName();
+            $birthDate = $employee->getBirthDate();
+            $department = $employee->getDepartment();
+            $salary = $employee->getSalary();
+            $occupation = $employee->getOccupation();
+            $photo = $employee->getPhoto();
+
+            // sql insert query
+            $sqlInsertQuery = "INSERT INTO employees
+                                (registrationNumber, 
+                                firstName, 
+                                lastName, 
+                                birthDate,
+                                department,
+                                salary, 
+                                occupation, 
+                                photo) 
+                                VALUES('$registrationNumber', 
+                                        '$firstName',
+                                        '$lastName',
+                                        '$birthDate', 
+                                        '$department', 
+                                        '$salary', 
+                                        '$occupation', 
+                                        '$photo')";
+
+        mysqli_query($this->getConnection(), $sqlInsertQuery);
+        }
     }
 ?>
