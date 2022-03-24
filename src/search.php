@@ -25,7 +25,7 @@ else
     <script src="https://kit.fontawesome.com/110fb8b8a8.js" crossorigin="anonymous"></script>
     <title>Employee management</title>
     <link href="css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/custom.css"
+    <link rel="stylesheet" href="./css/custom.css" />
 </head>
 
 <body class="sb-nav-fixed">
@@ -35,6 +35,8 @@ else
             <img id="logo" class=" ms-3 rounded-circle" style="width:50px;" src="images/logo.png" alt="logo">
 
             <a class="navbar-brand ps-3" id="top-title" href="index.php">Employee management</a>
+            <a href="logOut.php" style="text-decoration: none; margin-left: 850px; "  > <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
+
         </div>
     </nav>
     <div id="layoutSidenav">
@@ -73,7 +75,7 @@ else
                     </div> 
                 </form>
 
-                <div class="container-fluid px-8">
+                <div class="container-fluid px-2">
                     <form method="GET">
                         <div class="card mt-4 ">
                             <div class="card-header">
