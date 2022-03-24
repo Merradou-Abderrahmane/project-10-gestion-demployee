@@ -44,6 +44,7 @@ require_once 'employeeManager.php';
 				<img id="logo" class=" ms-3 rounded-circle" style="width:50px;" src="images/logo.png" alt="logo">
 
 				<a class="navbar-brand ps-3" id="top-title" href="index.php">Employee management</a>
+				<a href="logOut.php" style="text-decoration: none; margin-left: 850px; "  > <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
 			</div>
 
 		</div>
@@ -75,7 +76,7 @@ require_once 'employeeManager.php';
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h1 class="mt-4">👨‍💼Employee management</h1>
+					<h1 class="mt-4"><i class="fa fa-fw fa-plus-circle"></i>Add Employee</h1>
 
 					<div id="formCard" class="card mb-4 ">
 
