@@ -99,12 +99,49 @@
         mysqli_query($this->getConnection(), $sqlInsertQuery);
         }
 
+        public function uploadPhoto($fileName, $tempName){
+
+            $folder = 'images/' .$fileName;
+            // Now let's move the uploaded image into the folder: image
+            move_uploaded_file($tempName, $folder);
+        }
+
+
         // sql delete query
         public function deleteEmployee($id){
             $sqlDeleteQuery = "DELETE FROM employee WHERE id= $id";
             mysqli_query($this->getConnection(), $sqlDeleteQuery);
         }
-        
+
+        public function editEmployee($employeeInput, $id){
+            $employee = $this->filterUserInput($employeeInput);
+
+            $registrationNumber = $employee->getRegistrationNumber();
+            $firstName = $employee->getFirstName();
+            $lastName = $employee->getLastName();
+            $birthDate = $employee->getBirthDate();
+            $department = $employee->getDepartment();
+            $salary = $employee->getSalary();
+            $occupation = $employee->getOccupation();
+            $photo = $employee->getPhoto();
+     
+            // Update query
+            $sqlUpdateQuery = "UPDATE employee SET 
+                                registrationNumber='$registrationNumber',
+                                firstName='$firstName', 
+                                lastName='$lastName',
+                                birthDate='$birthDate',
+                                department='$department',
+                                salary='$salary', 
+                                occupation='$occupation',
+                                photo='$photo' 
+                                WHERE id=$id";
+     
+             // Make query 
+             mysqli_query($this->getConnection(), $sqlUpdateQuery);
+       
+        }
+
         public function getEmployee($id){
             $sqlGetQuery = "SELECT * FROM employee WHERE id= $id";
         
@@ -128,6 +165,29 @@
             return $employee;
         }  
 
+        public function searchByInput($searchInput){
+            $searchQuery = "SELECT * FROM employee WHERE registrationNumber = '$searchInput' OR firstName = '$searchInput' OR department = '$searchInput'";
+            $result = mysqli_query($this->getConnection(), $searchQuery);
+            $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            $employeeArray = array();
+            foreach($data as $searchedEmployee){
+
+                $employee = new Employee();
+                $employee->setPhoto($searchedEmployee['photo']);
+                $employee->setRegistrationNumber($searchedEmployee['registrationNumber']);
+                $employee->setFirstName($searchedEmployee['firstName']);
+                $employee->setLastName($searchedEmployee['lastName']);
+                $employee->setBirthDate($searchedEmployee['birthDate']);
+                $employee->setDepartment($searchedEmployee['department']);
+                $employee->setSalary($searchedEmployee['salary']);
+                $employee->setOccupation($searchedEmployee['occupation']);
+
+                array_push($employeeArray, $employee);
+
+            }
+            return $employeeArray;
+        }
 
 
     }
