@@ -3,16 +3,6 @@ require_once 'employeeManager.php';
 $employeeManager = new EmployeeManager();
 $data = $employeeManager->getAllEmployees();
 
-// if(!empty($_POST)){      
-//     $searchInput = $_POST["search"] ;
-//     $data = $employeeManager->searchByInput($searchInput);
-// }
-// else
-// {
-
-//     header("Location: signIn.php");
-// }
-
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +25,7 @@ $data = $employeeManager->getAllEmployees();
             <img id="logo" class=" ms-3 rounded-circle" style="width:50px;" src="images/logo.png" alt="logo">
 
             <a class="navbar-brand ps-3" id="top-title" href="index.php">Employee management</a>
+            <a href="logOut.php" style="text-decoration: none; margin-left: 850px; "  > <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
         </div>
     </nav>
     <div id="layoutSidenav">
@@ -64,7 +55,7 @@ $data = $employeeManager->getAllEmployees();
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-8">
+                <div class="container-fluid px-2">
                     <h1 class="mt-4">👨‍💼Employee management</h1>
                     <form method="GET">
                         <div class="card mt-4 ">
