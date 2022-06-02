@@ -1,5 +1,5 @@
 <?php
-    require_once 'employee.php';
+    require_once '../../entities/employee.php';
 
     class EmployeeManager {
         private $Connection = null;

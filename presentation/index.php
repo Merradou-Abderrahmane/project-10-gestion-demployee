@@ -1,5 +1,5 @@
 <?php
-require_once 'employeeManager.php';
+require_once './manager/employeeManager.php';
 $employeeManager = new EmployeeManager();
 $data = $employeeManager->getAllEmployees();
 
@@ -14,8 +14,8 @@ $data = $employeeManager->getAllEmployees();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <script src="https://kit.fontawesome.com/110fb8b8a8.js" crossorigin="anonymous"></script>
     <title>Employee management</title>
-    <link href="css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/custom.css">
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
 <body class="sb-nav-fixed">
