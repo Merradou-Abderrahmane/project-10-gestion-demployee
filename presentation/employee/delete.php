@@ -6,7 +6,8 @@ if(isset($_GET['id'])){
 
 $employeeManager = new EmployeeManager();
 $employeeManager->deleteEmployee($id);
-header('Location: index.php');
+header('Location: ../index.php');
+
 }
 
 ?>
