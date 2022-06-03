@@ -8,7 +8,7 @@ if(isset($_POST['username'],$_POST['password'])){
 
     if($username == 'admin' && $password == 'admin'){
       
-        header('location:index.php');
+        header('location:../../presentation/index.php');
     
     }
       
@@ -23,8 +23,8 @@ if(isset($_POST['username'],$_POST['password'])){
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<title>Employee management</title>
-	<link href="css/style.css" rel="stylesheet" />
-	<link rel="stylesheet" href="css/custom.css">
+	<link href="../assets/css/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../assets/css/custom.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -36,7 +36,7 @@ if(isset($_POST['username'],$_POST['password'])){
 		<!-- Navbar Brand-->
 		<div class="d-flex justify-content-center">
 			<div class='w-100'>
-				<img id="logo" class=" ms-3 rounded-circle" style="width:65px;" src="images/logo.png" alt="logo">
+				<img id="logo" class=" ms-3 rounded-circle" style="width:65px;" src="../assets/images/logo.png" alt="logo">
 
 				<a class="navbar-brand ps-3" id="top-title" style="font-size : 27px">Employee management</a>
 			</div>

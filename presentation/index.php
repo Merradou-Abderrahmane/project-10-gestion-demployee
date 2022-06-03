@@ -1,5 +1,5 @@
 <?php
-require_once './manager/employeeManager.php';
+require_once '../manager/employeeManager.php';
 $employeeManager = new EmployeeManager();
 $data = $employeeManager->getAllEmployees();
 
@@ -22,10 +22,10 @@ $data = $employeeManager->getAllEmployees();
     <nav class="sb-topnav navbar navbar-expand  ">
         <!-- Navbar Brand-->
         <div class='w-100'>
-            <img id="logo" class=" ms-3 rounded-circle" style="width:50px;" src="images/logo.png" alt="logo">
+            <img id="logo" class=" ms-3 rounded-circle" style="width:50px;" src="../presentation/assets/images/logo.png" alt="logo">
 
             <a class="navbar-brand ps-3" id="top-title" href="index.php">Employee management</a>
-            <a href="logOut.php" style="text-decoration: none; margin-left: 850px; "  > <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
+            <a href="../presentation/authentication/logOut.php" style="text-decoration: none; margin-left: 850px; "  > <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
         </div>
     </nav>
     <div id="layoutSidenav">
@@ -37,11 +37,11 @@ $data = $employeeManager->getAllEmployees();
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-globe"></i></div>
                             Browse Employees <br>
                         </a>
-                        <a class="nav-link" href="search.php">
+                        <a class="nav-link" href="employee/search.php">
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-search"></i></div>
                             Find Employee <br>
                         </a>
-                        <a class="nav-link" href="insert.php">
+                        <a class="nav-link" href="employee/insert.php">
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-plus-circle"></i></div>
                             Add Employee <br>
                         </a>
@@ -90,7 +90,7 @@ $data = $employeeManager->getAllEmployees();
                                             <td><?= $employee->getSalary() ?></td>
                                             <td><?= $employee->getOccupation() ?></td>
                                             <td>
-                                                <a href="edit.php?id=<?php echo $employee->getId() ?>" class="text-primary" style="text-decoration: none;"><i class="fa fa-fw fa-edit"></i>Edit</a> |
+                                                <a href="employee/edit.php?id=<?php echo $employee->getId() ?>" class="text-primary" style="text-decoration: none;"><i class="fa fa-fw fa-edit"></i>Edit</a> |
                                                 <a href="delete.php?id=<?php echo $employee->getId() ?>" class="text-danger" style="text-decoration: none;" onClick="return confirm('Are you sure you want to delete this employee ?');"><i class="fa fa-fw fa-trash"></i>Delete</a>
                                             </td>
                                         </tr>

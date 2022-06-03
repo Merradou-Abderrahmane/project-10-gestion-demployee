@@ -1,5 +1,5 @@
 <?php
-require_once 'employeeManager.php';
+require_once '../../manager/employeeManager.php';
 
 $employeeManager = new EmployeeManager();
 
@@ -45,8 +45,8 @@ if(isset($_POST['update'])){
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<script src="https://kit.fontawesome.com/110fb8b8a8.js" crossorigin="anonymous"></script>
 	<title>Employee management</title>
-	<link href="css/style.css" rel="stylesheet" />
-	<link rel="stylesheet" href="css/custom.css">
+	<link href="../assets/css/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../assets/css/custom.css">
 </head>
 
 <body class="sb-nav-fixed">
@@ -54,10 +54,10 @@ if(isset($_POST['update'])){
 		<!-- Navbar Brand-->
 		<div class="d-flex justify-content-center">
 			<div class='w-100'>
-				<img id="logo" class=" ms-3 rounded-circle" style="width:50px;" src="images/logo.png" alt="logo">
+				<img id="logo" class=" ms-3 rounded-circle" style="width:50px;" src="../assets/images/logo.png" alt="logo">
 
-				<a class="navbar-brand ps-3" id="top-title" href="index.php">Employee management</a>
-				<a href="logOut.php" style="text-decoration: none; margin-left: 850px; "  > <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
+				<a class="navbar-brand ps-3" id="top-title" href="../index.php">Employee management</a>
+				<a href="../authentication/logOut.php" style="text-decoration: none; margin-left: 850px; "  > <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
 
 			</div>
 
@@ -135,7 +135,7 @@ if(isset($_POST['update'])){
 
 								<div class="col-12">
 									<button id="submitButton" type="submit" name="update" value="update" class="btn btn-primary-custom-2"><i class="fa fa-fw fa-edit"></i>Update</button>
-									<a href="index.php">Form</a>
+									<!-- <a href="../index.php">Form</a> -->
 								</div>
 							</form>
 						</div>

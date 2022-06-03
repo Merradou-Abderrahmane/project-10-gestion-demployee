@@ -1,4 +1,4 @@
-<php 
+<?php 
 
  class MySqlConnection {
     private $Connection = null;
