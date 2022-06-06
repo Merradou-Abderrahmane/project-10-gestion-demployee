@@ -91,7 +91,7 @@ $data = $employeeManager->getAllEmployees();
                                             <td><?= $employee->getOccupation() ?></td>
                                             <td>
                                                 <a href="employee/edit.php?id=<?php echo $employee->getId() ?>" class="text-primary" style="text-decoration: none;"><i class="fa fa-fw fa-edit"></i>Edit</a> |
-                                                <a href="delete.php?id=<?php echo $employee->getId() ?>" class="text-danger" style="text-decoration: none;" onClick="return confirm('Are you sure you want to delete this employee ?');"><i class="fa fa-fw fa-trash"></i>Delete</a>
+                                                <a href="employee/delete.php?id=<?php echo $employee->getId() ?>" class="text-danger" style="text-decoration: none;" onClick="return confirm('Are you sure you want to delete this employee ?');"><i class="fa fa-fw fa-trash"></i>Delete</a>
                                             </td>
                                         </tr>
                                     <?php } ?>
