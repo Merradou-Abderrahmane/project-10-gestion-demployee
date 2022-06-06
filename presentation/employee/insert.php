@@ -43,7 +43,7 @@ require_once '../../manager/employeeManager.php';
 			<div class='w-100'>
 				<img id="logo" class=" ms-3 rounded-circle" style="width:50px;" src="../assets/images/logo.png" alt="logo">
 
-				<a class="navbar-brand ps-3" id="top-title" href="index.php">Employee management</a>
+				<a class="navbar-brand ps-3" id="top-title" href="../index.php">Employee management</a>
 				<a href="../authentication/logOut.php" style="text-decoration: none; margin-left: 850px; "  > <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
 			</div>
 
@@ -54,7 +54,7 @@ require_once '../../manager/employeeManager.php';
 			<nav class="sb-sidenav accordion " id="sidenavAccordion">
 				<div class="sb-sidenav-menu sb-sidenav-custom">
 					<div class="nav">
-					<a class="nav-link" href="index.php">
+					<a class="nav-link" href="../index.php">
                            <div class="sb-nav-link-icon"><i class="fa fa-fw fa-globe"></i></div>
                             Browse Employees <br>
                         </a> 

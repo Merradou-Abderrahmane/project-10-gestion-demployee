@@ -89,8 +89,8 @@
 
         public function uploadPhoto($fileName, $tempName){
 
-            $folder = __DIR__.'../presentation/assets/images/' .$fileName;
-            // Now let's move the uploaded image into the folder: image
+            $folder = __DIR__.'/../data/uploads/' .$fileName;
+            // Now let's move the uploaded image into the folder: uploads
             move_uploaded_file($tempName, $folder);
         }
 
