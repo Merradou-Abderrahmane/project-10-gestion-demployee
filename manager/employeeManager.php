@@ -1,5 +1,5 @@
 <?php
-    // require_once '../entities/mysqlconnection.php';
+    require_once '../entities/mysqlconnection.php';
     require_once '../entities/employee.php';
 
     class EmployeeManager extends MySqlConnection {
