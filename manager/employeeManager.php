@@ -1,21 +1,8 @@
 <?php
+    // require_once '../entities/mysqlconnection.php';
     require_once '../entities/employee.php';
-    require_once '../entities/mysqlconnection.php';
 
-    class EmployeeManager {
-        private $Connection = null;
-
-        private function getConnection(){
-            if(is_null($this->Connection)){
-                $this->Connection = mysqli_connect('localhost', 'test', 'test123', 'realisation');
-
-                if(!$this->Connection){
-                    $message = 'Connection Error: ' .mysqli_connect_error();
-                    throw new Exception($message);
-                }
-            }
-            return $this->Connection;
-        }
+    class EmployeeManager extends MySqlConnection {
 
         public function getAllEmployees(){
             $sqlGetData = 'SELECT * FROM employee';
