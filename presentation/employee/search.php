@@ -1,5 +1,5 @@
 <?php
-require_once '../../manager/employeeManager.php';
+require_once __DIR__.'/../../manager/employeeManager.php';
 $employeeManager = new EmployeeManager();
 $data = $employeeManager->getAllEmployees();
 

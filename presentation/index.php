@@ -1,5 +1,5 @@
 <?php
-require_once '../manager/employeeManager.php';
+require_once __DIR__.'/../manager/employeeManager.php';
 $employeeManager = new EmployeeManager();
 $data = $employeeManager->getAllEmployees();
 
@@ -25,7 +25,7 @@ $data = $employeeManager->getAllEmployees();
             <img id="logo" class=" ms-3 rounded-circle" style="width:50px;" src="../presentation/assets/images/logo.png" alt="logo">
 
             <a class="navbar-brand ps-3" id="top-title" href="index.php">Employee management</a>
-            <a href="../presentation/authentication/logOut.php" style="text-decoration: none; margin-left: 850px; "  > <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
+            <a href="../presentation/authentication/logOut.php" style="text-decoration: none; margin-left: 850px; "> <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
         </div>
     </nav>
     <div id="layoutSidenav">
