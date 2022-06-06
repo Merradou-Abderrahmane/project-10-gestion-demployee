@@ -81,7 +81,7 @@ $data = $employeeManager->getAllEmployees();
                                     foreach ($data as $employee) {
                                     ?>
                                         <tr>
-                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo 'images/' . $employee->getPhoto(); ?>"></td>
+                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo __DIR__.'../presentation/assets/images' . $employee->getPhoto(); ?>"></td>
                                             <td><?= $employee->getRegistrationNumber() ?></td>
                                             <td><?= $employee->getFirstName() ?></td>
                                             <td><?= $employee->getLastName() ?></td>
