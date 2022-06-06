@@ -19,7 +19,7 @@ require_once '../../manager/employeeManager.php';
 		$employeeManager->insertEmployee($employee);
 		$employeeManager->uploadPhoto($fileName, $tempName);
 
-		header("Location: index.php");
+		header("Location: ../index.php");
 	}
 
 ?>

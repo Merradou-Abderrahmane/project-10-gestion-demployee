@@ -31,7 +31,7 @@ if(isset($_POST['update'])){
 	
 	$employeeManager->editEmployee($editedEmployee, $id);
 
-    header('location: index.php');
+    header('location: ../index.php');
 }
 
 ?>
