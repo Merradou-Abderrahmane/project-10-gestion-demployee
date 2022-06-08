@@ -152,7 +152,7 @@
             $employee->setPhoto($employee_data['photo']);
             return $employee;
         }  
-
+        // filter input later
         public function searchByInput($searchInput){
             $searchQuery = "SELECT * FROM employee WHERE registrationNumber = '$searchInput' OR firstName = '$searchInput' OR department = '$searchInput'";
             $result = mysqli_query($this->getConnection(), $searchQuery);
