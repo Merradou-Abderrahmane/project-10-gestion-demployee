@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../manager/employeeManager.php';
+require_once __DIR__ . '/../manager/employeeManager.php';
 $employeeManager = new EmployeeManager();
 $data = $employeeManager->getAllEmployees();
 
@@ -81,7 +81,7 @@ $data = $employeeManager->getAllEmployees();
                                     foreach ($data as $employee) {
                                     ?>
                                         <tr>
-                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo __DIR__.'/../data/uploads' . $employee->getPhoto(); ?>"></td>
+                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo 'http://localhost/project-10-gestion-demployee' . '/data/uploads/' . $employee->getPhoto(); ?>"></td>
                                             <td><?= $employee->getRegistrationNumber() ?></td>
                                             <td><?= $employee->getFirstName() ?></td>
                                             <td><?= $employee->getLastName() ?></td>
